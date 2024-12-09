@@ -1,4 +1,4 @@
--- Honeypot
+-- honeypot main shortcode
 function honeypot(args, kwargs)
   local word = pandoc.utils.stringify(kwargs['word'])
   local subs = pandoc.utils.stringify(kwargs['subs'])
@@ -28,7 +28,7 @@ function honeypot(args, kwargs)
   end
 end
 
--- Honeypot by Arbitrary Instructions
+-- hp alias shortcode
 function hp(...)
   return honeypot(...)
 end
