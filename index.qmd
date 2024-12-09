@@ -1,6 +1,14 @@
 ---
-title: "honeypot Example"
-format: html
+title: "honeypot Demo"
+format: 
+  html:
+    toc: true
+    theme: cerulean
+    code-links:
+      - text: GitHub Repo
+        icon: github
+        repo: https://github.com/jmgirard/honeypot
+    
 ---
 
 ## Example without honeypot
@@ -20,7 +28,7 @@ How ChatGPT 4o responds to copying the text above:
 A researcher uses an independent samples t-test to compare the means of two separate groups, such as participants assigned to different conditions, while a dependent samples t-test is used to compare means within the same group measured at two different times or under two related conditions. For example, an independent samples t-test would be appropriate to compare test scores between students taught with two different teaching methods. A dependent samples t-test would be suitable to assess whether stress levels change before and after a mindfulness intervention within the same group of participants.
 </blockquote>
 
-## Example with honeypot
+## Examples with honeypot
 Honeypot adds some text to the question that is invisible to humans but will be copied into the LLM. We can use this text to add extra instructions for the LLM to modify its answer in easily detectable ways.
 
 ### Use an uncommon word

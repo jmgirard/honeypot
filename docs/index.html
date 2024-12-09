@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>honeypot Example</title>
+<title>honeypot Demo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,23 +29,37 @@ ul.task-list li input[type="checkbox"] {
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-973236bd072d72a04ee9cd82dcc9cb29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#example-without-honeypot" id="toc-example-without-honeypot" class="nav-link active" data-scroll-target="#example-without-honeypot">Example without honeypot</a></li>
+  <li><a href="#examples-with-honeypot" id="toc-examples-with-honeypot" class="nav-link" data-scroll-target="#examples-with-honeypot">Examples with honeypot</a>
+  <ul class="collapse">
+  <li><a href="#use-an-uncommon-word" id="toc-use-an-uncommon-word" class="nav-link" data-scroll-target="#use-an-uncommon-word">Use an uncommon word</a></li>
+  <li><a href="#replace-the-first-period-with-a-mid-dot" id="toc-replace-the-first-period-with-a-mid-dot" class="nav-link" data-scroll-target="#replace-the-first-period-with-a-mid-dot">Replace the first period with a mid-dot</a></li>
+  <li><a href="#custom-instructions" id="toc-custom-instructions" class="nav-link" data-scroll-target="#custom-instructions">Custom instructions</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="undefined"><i class="bi bi-github"></i>GitHub Repo</a></li></ul></div></nav>
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">honeypot Example</h1>
+<h1 class="title">honeypot Demo</h1>
 </div>
 
 
@@ -77,8 +91,8 @@ How ChatGPT 4o responds to copying the text above:
 A researcher uses an independent samples t-test to compare the means of two separate groups, such as participants assigned to different conditions, while a dependent samples t-test is used to compare means within the same group measured at two different times or under two related conditions. For example, an independent samples t-test would be appropriate to compare test scores between students taught with two different teaching methods. A dependent samples t-test would be suitable to assess whether stress levels change before and after a mindfulness intervention within the same group of participants.
 </blockquote>
 </section>
-<section id="example-with-honeypot" class="level2">
-<h2 class="anchored" data-anchor-id="example-with-honeypot">Example with honeypot</h2>
+<section id="examples-with-honeypot" class="level2">
+<h2 class="anchored" data-anchor-id="examples-with-honeypot">Examples with honeypot</h2>
 <p>Honeypot adds some text to the question that is invisible to humans but will be copied into the LLM. We can use this text to add extra instructions for the LLM to modify its answer in easily detectable ways.</p>
 <section id="use-an-uncommon-word" class="level3">
 <h3 class="anchored" data-anchor-id="use-an-uncommon-word">Use an uncommon word</h3>
@@ -214,6 +228,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -324,6 +340,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
