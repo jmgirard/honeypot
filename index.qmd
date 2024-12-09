@@ -7,8 +7,7 @@ format:
     code-links:
       - text: GitHub Repo
         icon: github
-        repo: https://github.com/jmgirard/honeypot
-    
+        href: https://github.com/jmgirard/honeypot
 ---
 
 ## Example without honeypot
