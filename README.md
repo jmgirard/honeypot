@@ -41,4 +41,4 @@ Add custom honeypot instruction:
 
 ## Example / Demo
 
-Here is a demo of the honeypot extension: [example.html](https://jmgirard.github.io/honeypot/example.html).
+Here is a demo of the honeypot extension: [index.html](https://jmgirard.github.io/honeypot).
