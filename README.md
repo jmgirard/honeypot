@@ -27,11 +27,11 @@ Add uncommon word honeypot (include "banana" in the answer):
 
 `{{< hp word="banana" >}}`
 
-Add a homoglyph honeypot (replace the first . with ·):
+Add a [homoglyph](https://en.wikipedia.org/wiki/Homoglyph) honeypot (replace the first . with ·):
 
 `{{< hp glyph="." >}}`
 
-Add both uncommon word and substitution honeypot:
+Add both uncommon word and homoglyph honeypot:
 
 `{{< hp word="banana" subs=T >}}`
 
