@@ -27,9 +27,9 @@ Add uncommon word honeypot (include "banana" in the answer):
 
 `{{< hp word="banana" >}}`
 
-Replace the first period with a mid-dot (`·`):
+Add a homoglyph honeypot (replace the first . with ·):
 
-`{{< hp subs=T >}}`
+`{{< hp glyph="." >}}`
 
 Add both uncommon word and substitution honeypot:
 
@@ -42,3 +42,12 @@ Add custom honeypot instruction:
 ## Example / Demo
 
 Here is a demo of the honeypot extension: [index.html](https://jmgirard.github.io/honeypot).
+
+## Homoglyphs
+
+| From | To |
+|------|----|
+| .    | ·  |
+| a    | ɑ  |
+| b    | Ь  |
+| i    | Ꭵ  |
